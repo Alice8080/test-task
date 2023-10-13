@@ -3,13 +3,13 @@ version: '3.5'
 services:
 
   provisioning-app:
-    container_name: test-task
+    container_name: test
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - '.:/test-task/'
-      - '/test-task/node_modules'
+      - '.:/test/'
+      - '/test/node_modules'
     ports:
       - '3000:3000'
     environment:

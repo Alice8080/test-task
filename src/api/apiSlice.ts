@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Book, Response, ResponseItem } from '../interfaces/interfaces';
-const API_KEY = 'AIzaSyDEKS24zrCUrfhEnuSABhUcJ4crjFCgam8';
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 const MAX_RESULTS = 30;
 
