@@ -32,5 +32,9 @@ git clone https://github.com/Alice8080/test-task.git
 ```
 
 ```
+cd test-task
+```
+
+```
 docker-compose up
 ```
