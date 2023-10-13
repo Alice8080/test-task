@@ -39,3 +39,5 @@ cd test-task
 ```
 docker-compose up
 ```
+
+Приложение будет доступно по адресу http://localhost:3000
