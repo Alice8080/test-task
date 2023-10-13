@@ -27,3 +27,10 @@ __Замечания__
 
 ## Запуск
 
+```
+git clone https://github.com/Alice8080/test-task.git
+```
+
+```
+docker-compose up
+```
