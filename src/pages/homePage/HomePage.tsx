@@ -63,13 +63,19 @@ const HomePage = () => {
         // eslint-disable-next-line
     }, [books]);
 
+    const initialValues = {
+        query: searchParams.has('query') ? searchParams.get('query') : '',
+        category: searchParams.has('category') ? searchParams.get('category') : 'all',
+        sorting: searchParams.has('sorting') ? searchParams.get('sorting') : 'relevance',
+    };
+
     return (
         <>
-            <SearchForm handleSubmit={handleSubmit} initial={searchParams.has('query') ? searchParams.get('query') : ''} />
+            <SearchForm handleSubmit={handleSubmit} initialValues={initialValues} />
             {isSuccess ?
                 <>
                     {renderContent}
-                    {(result && result.totalItems !== 0) && !listEnded ? (
+                    {(result && result.totalItems !== 0) && !listEnded && (!isLoading && !isFetching) ? (
                         <button
                             className="search-result__button-add"
                             disabled={isLoading || isFetching}

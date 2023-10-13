@@ -9,14 +9,15 @@ import './search-form.scss';
 
 // Formik и Yup используются для валидации данных, MUI и Iconify для стилистического оформления
 
-const SearchForm = ({ handleSubmit, initial }: { handleSubmit: (params: any | Params) => void, initial: string | null }) => {
+const SearchForm = ({ handleSubmit, initialValues }: { handleSubmit: (params: any | Params) => void, 
+    initialValues: {query: string | null, category: string | null, sorting: string | null} }) => {
     const dispatch = useDispatch();
     return (
         <Formik
             initialValues={{
-                query: initial,
-                category: 'all',
-                sorting: 'relevance'
+                query: initialValues.query,
+                category: initialValues.category,
+                sorting: initialValues.sorting
             }}
             validationSchema={Yup.object({
                 query: Yup.string().required('This is a required field')
@@ -48,7 +49,7 @@ const SearchForm = ({ handleSubmit, initial }: { handleSubmit: (params: any | Pa
                             as="select"
                             id="category"
                             name="category">
-                            <option value="all" selected>All</option>
+                            <option value="all">All</option>
                             <option value="art">Art</option>
                             <option value="biography">Biography</option>
                             <option value="computers">Computers</option>
@@ -60,7 +61,7 @@ const SearchForm = ({ handleSubmit, initial }: { handleSubmit: (params: any | Pa
                             as="select"
                             id="sorting"
                             name="sorting">
-                            <option value="relevance" selected>Relevance</option>
+                            <option value="relevance">Relevance</option>
                             <option value="newest">Newest</option>
                         </Field>
                     </div>

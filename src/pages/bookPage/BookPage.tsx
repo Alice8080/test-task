@@ -41,7 +41,6 @@ const BookPage: FC = () => {
         // eslint-disable-next-line
     }, [data]);
 
-    console.log(book)
     return (
         <div>
             <button className='back-link' onClick={() => navigate(-1)}>Go back</button>
