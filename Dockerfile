@@ -1,7 +1,7 @@
 FROM node:18-alpine
-WORKDIR /test/
-COPY public/ /test/public
-COPY src/ /test/src
-COPY package.json /test/
+WORKDIR /test-task/
+COPY public/ /test-task/public
+COPY src/ /test-task/src
+COPY package.json /test-task/
 RUN npm install
 CMD ["npm", "start"]
