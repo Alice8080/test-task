@@ -1,0 +1,29 @@
+@import "../vars";
+
+@mixin block-shadow() {
+    border-radius: 10px;
+    background-color: $bg-color;
+    position: relative;
+    box-shadow: 0px 30px 110px 0px rgba(13, 16, 37, 0.06);
+}
+
+@mixin block-accent() {
+    border-radius: 10px;
+    padding: 18px 26px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 156%;
+    white-space: nowrap;
+    background-color:  $accent-color;
+    color: $white;
+    position: relative;
+
+    @media (max-width: $md) {
+        padding: 14px 18px;
+    }
+
+    @media (max-width: $sm) {
+        padding: 12px 16px;
+    }
+}

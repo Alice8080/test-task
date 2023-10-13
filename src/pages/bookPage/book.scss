@@ -1,0 +1,56 @@
+@import "../../styles/styles.scss";
+
+.book {
+    @include block-shadow();
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+
+    h1 {
+        font-weight: 600;
+    }
+
+    &__img {
+        width: 14%;
+        height: fit-content;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__description {
+        @include block-shadow();
+        display: block;
+        padding: 20px;
+    }
+
+    &__text {
+        margin-left: 30px;
+        width: 70%;
+    }
+}
+
+.back-link {
+    color: $accent-color;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    display: block; 
+    font-size: 16px;
+
+    &:hover {
+        color: $accent-color;
+    }
+}
+
+@media(max-width: $lg) {
+    .book {
+        flex-direction: column;
+
+        &__img {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@import "vars.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    background-color: unset;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+
+ul li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+ol {
+    padding-left: 2rem;
+}
+
+img {
+    vertical-align: top;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    justify-content: center;
+    align-content: space-between;
+    grid-template: minmax(100px, auto) 1fr minmax(auto, auto)/1fr;
+    grid-template-areas: "header"
+        "main"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+    nav {
+        width: $layout-width;
+        margin: 0 auto;
+        padding: 30px 0;
+
+        a {
+            font-weight: 600;
+            text-decoration: underline;
+            color: $accent-color;
+        }
+    }
+}
+
+.main {
+    grid-area: main;
+    margin: 0 auto;
+    width: $layout-width;
+    padding-top: 30px;
+    margin-bottom: 50px;
+
+    @media (max-width: $sm) {
+        padding-top: 20px;
+    }
+}

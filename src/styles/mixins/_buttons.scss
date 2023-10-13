@@ -1,0 +1,48 @@
+@mixin button($font-size) {
+    color: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    font-size: $font-size;
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    @media (max-width: $md) {
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: calc($font-size - 1px);
+    }
+
+    @media (max-width: $xs) {
+        padding: 8px 12px;
+    }
+
+    &:focus-visible {
+        transition: none;
+        outline: solid $main-color 2px;
+    }
+
+    &:active {
+        outline: unset
+    }
+
+    svg {
+        font-size: calc($font-size + 5px);
+        margin: 0 0 0 8px;
+    }
+}
+
+@mixin primary-outlined-button($font-size) {
+    border: 1px solid $accent-color;
+    font-weight: 400;
+    @include button($font-size);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: $accent-color;
+        color: $white;
+    }
+}

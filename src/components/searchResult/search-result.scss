@@ -1,0 +1,93 @@
+@import "../../styles/styles.scss";
+
+.search-result {
+    margin: 60px 0 0 0;
+
+    h6 {
+        font-size: 22px;
+        font-weight: 500;
+        margin: 30px 0 20px;
+        color: $main-color;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__item {
+        @include block-shadow();
+        padding: 30px;
+        width: 30%;
+        text-align: center;
+
+        img {
+            box-shadow: 10px 20px 20px 0px rgba(13, 16, 37, 0.16);
+            display: block;
+            width: 30%;
+            margin: 0 auto;
+        }
+    }
+
+    &__notfound {
+        margin: 0;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 300;
+        span {
+            font-weight: 500;
+        }
+    }
+
+    &__button-add {
+        @include primary-outlined-button(16px);
+        margin: 20px auto;
+        span, svg {
+            font-size: 20px;
+            margin: 0 0 0 10px;
+        }
+    }
+}
+
+
+
+@media(max-width: $lg) {
+    .search-result {
+        h6 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 30px 0 20px;
+            color: $main-color;
+        }
+
+        &__item {
+            border-radius: 20px;
+            margin: 0 0 20px 0;
+            width: 100%;
+            padding: 40px;
+
+            img {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: $xs) {
+    .search-result {
+        h6 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 30px 0 20px;
+            color: $main-color;
+        }
+
+        &__item {
+            border-radius: 20px;
+            margin: 0 0 20px 0;
+        }
+    }
+}
